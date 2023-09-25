@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Picture of the Day</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%; /* Ensure body takes at least 100% of viewport height */
+            margin: 0;
+            /* Hide overflow to prevent scrollbars */
+        }
+
+        /* Rest of your CSS styles... */
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        h1,p,h6,label{
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="star.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container-fluid">
+        <h1 id="main" class="display-4 text-center">Astronomy Picture</h1>
+        <p class="lead text-center">Astronomical Picture of the Day</p>
+        
+        <label for="query" style="display: flex; justify-content: center;">Enter The Date:</label>
+        <div class="form-group" style="width:200px;margin:0 auto;">
+            <input class="form-control text-center" id="query" type="date">
+            <button class="form-control btn btn-primary text-center" style="width: 100px; display: flex; justify-content: center;margin: 50px;" type="button" onclick="getq()">Search</button>
+            <h6 class="text-center">Don't know what to do?<a href="#" onclick="alert('This website returns the Astronomical Picture of the day. All you have to do is just enter the date for the picture and click the Search button.')">Click Here</a></h6>
+        </div>
+        <img id="im" class="imvi">
+        <div id="pa" style="margin:0 20%; color: white;"></div>
+    </div>
+    <!-- <button class="form-control btn btn-primary text-center" style="width: 100px; display: flex; justify-content: center;margin: 10%;" type="button" onclick="opennav()">Github</button>
+    <button class="form-control btn btn-primary text-center" style="width: 100px; display: flex; justify-content: center;margin: 10%;" type="button" onclick="opennav()">Github</button> -->
+
+    <script>
+        function opennav() {
+            document.getElementById("side-nav").style.width = "330px";
+        }
+        
+        function closeNav() {
+            document.getElementById("side-nav").style.width = "0px";
+        }
+    </script>
+</body>
+</html>
